@@ -7,7 +7,7 @@
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
   display: grid;
   grid-auto-flow: column;
@@ -15,12 +15,16 @@
   justify-content: space-between;
 
   &__title {
-    font-family: Montserrat;
     font-size: 32px;
     font-weight: 700;
     line-height: 39.01px;
-    text-align: left;
     color: $headTitleColor;
+  }
+
+  &__user {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
   }
 }
 </style>

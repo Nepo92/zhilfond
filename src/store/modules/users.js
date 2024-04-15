@@ -50,6 +50,7 @@ const usersStore = {
   getters: {
     users: (state) => () => state.users.data,
     search: (state) => () => state.users.search,
+    fetchUsers: (state) => () => state.users.fetching,
   },
 };
 

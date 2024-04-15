@@ -5,14 +5,6 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-  async getUsers() {
-    try {
-      const response = await instance.get("users");
-      return response.data;
-    } catch (error) {
-      throw new Error(error);
-    }
-  },
   async searchUsers(payload) {
     try {
       const response = await instance.get(`users?${payload}`);

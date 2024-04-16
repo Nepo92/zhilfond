@@ -37,12 +37,11 @@ const usersStore = {
 
         const payload = useUsersPayload(context.state.users.search);
 
-        console.log(payload);
         const data = await usersAPI.searchUsers(payload);
 
         context.commit(users.__success, data);
       } catch (error) {
-        context.commit(users.__error);
+        context.commit(users.__error, error);
         throw new Error(error);
       }
     },
@@ -51,6 +50,7 @@ const usersStore = {
     users: (state) => () => state.users.data,
     search: (state) => () => state.users.search,
     fetchUsers: (state) => () => state.users.fetching,
+    hasError: (state) => () => state.users.error,
   },
 };
 

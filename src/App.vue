@@ -6,10 +6,12 @@ import Header from "@/components/Header.vue";
 import Sidebar from "@/components/sidebar/Sidebar.vue";
 import Card from "@/components/Card.vue";
 import Preloader from "@/components/ui/Preloader.vue";
+import Error from "@/components/ui/Error.vue";
 
 const store = useStore();
 
 const fetching = computed({ get: store.getters.fetchUsers });
+const hasError = computed({ get: store.getters.hasError });
 </script>
 
 <template>
@@ -20,6 +22,7 @@ const fetching = computed({ get: store.getters.fetchUsers });
       <Card />
     </main>
     <Preloader v-if="fetching" />
+    <Error v-if="hasError" :error="hasError" />
   </div>
 </template>
 
